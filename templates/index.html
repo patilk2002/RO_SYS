@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>FO_RO System</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/ro.png') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/front.css') }}">
+    <script src="{{ url_for('static', filename='css/main.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-danger navbar-dark bg-danger">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Alkalinity Calculator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Version History<span class="sr-only"></span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link " href="#">Download Results</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">About</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+      </nav>
+    <section class="form-box" >
+        <div class="container" style="width:90%">
+            
+            <!-- <h1>Alkalinity Calculator</h1> -->
+            
+
+            <div class="row" style="justify-content:center; width:100%;">
+                <div class="col-sm-8 col-sm-offset-1 col-md-12 col-md-offset-1 col-lg-3 col-lg-offset-1 form-wizard" >
+                  <p style="text-align: justify;">Design and optimization of a Reverse Osmosis (RO) system refers to the process of planning, designing, and refining a system to efficiently remove contaminants from water.<br><br>The goal of design and optimization is to ensure that the RO system operates at its maximum efficiency and effectively removes contaminants to meet the desired water quality standards.  </p>
+                              </div>
+                <div class="col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-2 col-lg-7 col-lg-offset-3 form-wizard">
+                    <!-- Form Wizard -->
+                    <!-- <form role="form" action="" method="post"> -->
+
+                        <form  role="form" action="{{ url_for("gfg")}}" method="post" id="regForm"  >
+
+                        
+                        <!-- <p>Fill all form field to go next step</p> -->
+                        
+                        <!-- Form progress -->
+                        <div class="container">
+                        <div class="row form-wizard-steps form-wizard-total-steps-3">
+                            <!-- <div class="form-wizard-progress">
+                                <div class="form-wizard-progress-line " data-now-value="12.25" data-number-of-steps="4" style="width: 12.25%; "></div>
+                            </div> -->
+
+                            <div class="col form-wizard-step active">
+                                <!-- <div class="form-wizard-step-icon"><i class="fa fa-user" aria-hidden="true"></i></div> -->
+                                <p>Membrane/Water Type</p>
+                            </div>
+                            <!-- Step 1 -->
+                            <div class="col form-wizard-step ">
+                                <!-- <div class="form-wizard-step-icon"><i class="fa fa-user" aria-hidden="true"></i></div> -->
+                                <p>Membrane Element Characteristics</p>
+                            </div>
+                            <!-- Step 1 -->
+                            
+                            <!-- Step 2 -->
+                            <div class="col form-wizard-step " >
+                                <!-- <div class="form-wizard-step-icon"><i class="fa fa-location-arrow" aria-hidden="true"></i></div> -->
+                                <p>Feed Water Characteristics </p>
+                            </div>
+                            <!-- Step 2 -->
+                            
+                            <!-- Step 3 -->
+                            <div class="col form-wizard-step " >
+                                <!-- <div class="form-wizard-step-icon"><i class="fa fa-briefcase" aria-hidden="true"></i></div> -->
+                                <p>RO system Membrane Characteristics </p>
+                            </div>
+                            <!-- Step 3 -->
+                            
+                        </div>
+                    </div>
+
+                        
+                        <!-- Form progress -->
+                        <fieldset>
+
+                            <h4> <span>Step 1 - 4</span></h4>
+                            <div class="form-group">
+                              <!-- <div class="section over-hide z-bigger"> -->
+                                <input class="checkbox" type="checkbox" name="general" id="general" checked>
+                                <label class="for-checkbox" for="general"></label>
+                                <div class="background-color"></div>
+                                <div class="section over-hide z-bigger">
+                                  <!-- <h1>Alkalinity Calculator</h1> -->
+                                  <div class="container ">
+                                    <div class="row justify-content-center ">
+                                      <div class="col-12">
+                                        <p style="font-weight:bold;color:red">Choose a membrane</p>
+                                      </div>
+                                      <div class="col-12 ">
+                                        <input class="checkbox-tools" type="radio" name="tools" id="tool-1" checked>
+                                        <label class="for-checkbox-tools" for="tool-1">
+                                          <i class='uil uil-line-alt'></i>
+                                          TW
+                                        </label><!--
+                                        --><input class="checkbox-tools" type="radio" name="tools" id="tool-2">
+                                        <label class="for-checkbox-tools" for="tool-2">
+                                          <i class='uil uil-vector-square'></i>
+                                                        BW
+                                        </label><!--
+                                        --><input class="checkbox-tools" type="radio" name="tools" id="tool-3">
+                                        <label class="for-checkbox-tools" for="tool-3">
+                                          <i class='uil uil-ruler'></i>
+                                          SW
+                                        </label>
+                                      </div>
+                                      <div class="col-12">
+                                        <p style="font-weight:bold;color:red">Choose Type of Water</p>
+                                      </div>
+                                      <div class="col-xl-10 ">
+                                        <input class="checkbox-tools" type="radio" name="budget" id="budget-1" checked>
+                                        <label class="for-checkbox-tools" for="budget-1">
+                                          NaCl
+                                        </label><!--
+                                        --><input class="checkbox-tools" type="radio" name="budget" id="budget-2">
+                                        <label class="for-checkbox-tools" for="budget-2">							
+                                         MgSO<sub>4</sub>
+                                        </label><!--
+                                        --><input class="checkbox-tools" type="radio" name="budget" id="budget-3">
+                                        <label class="for-checkbox-tools" for="budget-3">							
+                                         CuSO<sub>4</sub>
+                                        </label>
+                                        
+                                      </div>
+                                      
+                                    </div>
+                                  
+                                  </div>	
+                                <!-- </div> -->
+                              </div>
+                               </div>
+                        
+                            
+                            
+                            <div class="form-wizard-buttons">
+                                <button type="button" class="btn btn-next">Next</button>
+                            </div>
+                        </fieldset>
+                        
+                        <!-- Form Step 1 -->
+                        <fieldset>
+
+                            <h4> <span>Step 2-4</span></h4>
+                            <div class="form-group">
+                                <label>Temperature of Permeate <span>*</span></label></div><div>
+                                <input type="radio" id="temp" class="range"  name="temp"  onclick="enable_tempC()" checked >
+                                <input type="text" class="temp" name="temperature"  value="25" onchange="equateK()"id="tempC_text" size="5"  >&nbsp; &#x2103;
+                                <br>
+                                <!-- &nbsp;&nbsp;&nbsp; -->
+                                <input type="radio" id="tempK" class="range" name="temperature"  onclick="enable_tempK()"  >
+                                <input type="text" class="temp"  name="temperature" value="298" onchange="equateC()" id="tempK_text" size="5" disabled >&nbsp;&nbsp;K
+                                <!-- <input type="number" name="Temp" id="tenp" placeholder="Temperature in &#x2103;" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Temperature of Permeate in Kelvin <span>*</span></label>
+                                <input type="number" name="TempK" id="tempK" placeholder="Temperature in K" class="form-control required" disabled> -->
+                            </div>
+                           
+                           
+                            
+                            <div class="form-group">
+                                <label>Fouling Factor <span>*</span></label>
+                                <input type="text" name="flowfact" id="fouling" value="0.85" placeholder="Fouling Factor" class="form-control required">
+                            </div>
+                            <div class="form-wizard-buttons">
+                                <button type="button" id="btn" class="btn btn-fixed" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Fixed Params</button></div>
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="staticBackdropLabel">Fixed Parameters</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                         <table class="tab">
+                                                   <tr><td class="fixed">Total Active Membrane Area of one element</td><td class="params"> 37.2 m<sup>2</sup></td></tr>
+                                                    <tr><td class="fixed">Length of Membrane Envelope</td><td class="params"> 0.965 m</td></tr>
+                                                    <tr><td class="fixed">Membrane Width</td><td class="params"> 0.85 m</td></tr>
+                                                    <tr><td class="fixed">Filament Thickness</td><td class="params"> 0.00033 m</td></tr>
+                                                    <tr><td class="fixed">Mesh Length</td><td class="params"> 0.00327 m</td></tr>
+                                                    <tr><td class="fixed">Spacer Thickness= height of feed channel</td><td class="params"> 0.0006 m</td></tr>
+                                                    <tr><td class="fixed">Spacer Angle</td><td class="params"> 105</td></tr>
+                                                    <tr><td class="fixed">Number of Envelopes in one Module</td><td class="params">28</td></tr>
+                                                    <tr><td class="fixed">Intrinsic Water Permeability Constant at 25°C</td><td class="params"> 2.93333E-12 m<sup>3</sup>/(m<sup>2</sup>.s.kg/ms<sup>2</sup>)</td></tr>
+                                                    <tr><td class="fixed">Intrinsic Solute Permeability Constant at 25°C</td><td class="params">2.1875E-08 m/s </td></tr>
+                                                                                                
+                                                </table>
+                                                
+                                                <!-- <div class="col">
+
+                                                </div>-->
+                                            
+                                          
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div> 
+                        
+                            
+                            
+                            <div class="form-wizard-buttons">
+                              <button type="button" class="btn btn-previous">Previous</button>
+                                <button type="button" class="btn btn-next">Next</button>
+                            </div>
+                        </fieldset>
+                        <!-- Form Step 1 -->
+
+                        <!-- Form Step 2 -->
+                        <fieldset>
+
+                            <h4> <span>Step 3 - 4</span></h4>
+                            
+                            <div class="form-group">
+                                <label>Feed Water Concentration  <span>*</span></label>
+                                <input type="text" name="waterConc" id="waterConc" value="35000" placeholder="Feed Water conc" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Feed Flow Rate<span>*</span></label>
+                                <input type="text" name="flowRate" id="flowRate" value="0.00033" placeholder="feed flow rate" class="form-control required">
+                            </div>
+                            <div style="height:60px"></div>
+                            <div class="form-wizard-buttons">
+                                <button type="button" id="btn1" class="btn btn-fixed" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Fixed Params</button></div>
+                                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="staticBackdropLabel1">Fixed Parameters</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                         <table class="tab">
+                                                   <tr><td class="fixed">Molecular Weight of Sodium Chloride</td><td class="params">58.45 g/mol</td></tr>
+                                                    
+                                                </table>
+                                                
+                                                <!-- <div class="col">
+
+                                                </div> -->
+                                            
+                                          
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                           
+                            <div class="form-wizard-buttons">
+                                <button type="button" class="btn btn-previous">Previous</button>
+                                <button type="button" class="btn btn-next">Next</button>
+                            </div>
+                        </fieldset>
+                        <!-- Form Step 2 -->
+
+                        <!-- Form Step 3 -->
+                        <fieldset>
+
+                            <h4> <span>Step 3 - 3</span></h4>
+                            <div class="form-group">
+                                <label>Number of elements in one pressure vessel of Stage 1
+                                    <span>*</span></label>
+                                <!-- <input type="text" name="elements" placeholder="Number of elements in one pressure vessel of Stage 1" class="form-control required">
+                            </div> -->
+
+                            <div class="range-control">
+                                
+
+                                <input id="range-slider__range" type="range" value="4" min="4" max="10" name="elements">
+                                  <span id="demo">4</span>
+                                 <!-- <p>Value: <span id="demo"></span></p> -->
+
+
+                                </div>
+                              <div style="height:80px"></div>
+                              <div style="height:80px"></div>
+                            <div class="form-wizard-buttons">
+                                <button type="button" id="btn2" class="btn btn-fixed" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Fixed Params</button></div>
+                                <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="staticBackdropLabel2">Fixed Parameters</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                         <table class="tab">
+                                                   <tr><td class="fixed">Number of pressure vessels in Stage 1
+                                                </td><td class="params">1</td></tr>
+                                                    
+                                                </table>
+                                                
+                                                <!-- <div class="col">
+
+                                                </div> -->
+                                            
+                                          
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                           
+                            <!-- <br/> -->
+                            <div class="form-wizard-buttons">
+                                <button type="button" class="btn btn-previous">Previous</button>
+                                <button type="submit" class="btn btn-submit" onclick="loader()">Submit</button>
+                            </div>
+                        </fieldset>
+                        <!-- Form Step 3 -->
+                        
+                        <!-- Form Step 4 -->
+                      
+                        <!-- Form Step 4 -->
+                    
+                    </form>
+                    <!-- Form Wizard -->
+                </div>
+            </div>
+
+
+            <div id="loading" class="loading" style="display:none;position:fixed;top:50%;left:50%;margin-top:-50px;
+            margin-left: -100px;"><img src="/static/images/spin.gif" alt="" /></div>
+
+        </div>
+    </section>
+
+    <script src="css/main.js"></script>
+
+
+    <script>
+      var slider = document.getElementById("range-slider__range");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+      
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+      </script>
+
+
+
+
+</body>
+</html>

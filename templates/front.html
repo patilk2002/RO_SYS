@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alkalinity Calculator</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/front.css') }}">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+    <div class="section over-hide z-bigger">
+		<input class="checkbox" type="checkbox" name="general" id="general" checked>
+		<label class="for-checkbox" for="general"></label>
+		<div class="background-color"></div>
+		<div class="section over-hide z-bigger">
+			<h1>Alkalinity Calculator</h1>
+			<div class="container pb-5">
+				<div class="row justify-content-center pb-5">
+					<div class="col-12 pt-5">
+						<p class="mb-4 pb-2">Choose a membrane</p>
+					</div>
+					<div class="col-12 pb-5">
+						<input class="checkbox-tools" type="radio" name="tools" id="tool-1" checked>
+						<label class="for-checkbox-tools" for="tool-1">
+							<i class='uil uil-line-alt'></i>
+							TW
+						</label><!--
+						--><input class="checkbox-tools" type="radio" name="tools" id="tool-2">
+						<label class="for-checkbox-tools" for="tool-2">
+							<i class='uil uil-vector-square'></i>
+                            BW
+						</label><!--
+						--><input class="checkbox-tools" type="radio" name="tools" id="tool-3">
+						<label class="for-checkbox-tools" for="tool-3">
+							<i class='uil uil-ruler'></i>
+							SW
+						</label>
+					</div>
+					<div class="col-12 pt-1">
+						<p class="mb-4 pb-2">Choose Type of Water</p>
+					</div>
+					<div class="col-xl-10 pb-5">
+						<input class="checkbox-tools" type="radio" name="budget" id="budget-1" checked>
+						<label class="for-checkbox-tools" for="budget-1">
+							<span data-hover="NaCl">NaCl</span>
+						</label><!--
+						--><input class="checkbox-tools" type="radio" name="budget" id="budget-2">
+						<label class="for-checkbox-tools" for="budget-2">							
+							<span data-hover="MgSo4">MgSO<sub>4</sub></span>
+						</label><!--
+						--><input class="checkbox-tools" type="radio" name="budget" id="budget-3">
+						<label class="for-checkbox-tools" for="budget-3">							
+							<span data-hover="CuSo4">CuSO<sub>4</sub></span>
+						</label>
+						
+					</div>
+					
+				</div>
+				<a href="home"><button class=" btn btn-danger" >Next</button></a>
+			</div>	
+		</div>
+	</div>
+		
+	
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/ro.png') }}">
+    <title>FO_RO System results</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/ro.png') }}">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{ url_for('static', filename='css/form.js') }}"></script>
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="main">Results:</div>
+
+<!-- table starts  -->
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="container">
+        <div class="row ">
+          <!-- <div class="col-3"></div> -->
+          <div class="col-lg-6 col-sm-10 col-md-6">
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+         Rcal
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionpanelsStayOpenExample">
+        <div class="accordion-body">   <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Element 1</th>
+                  <th scope="col">Element 2</th>
+                  <th scope="col">Element 3</th>
+                  <th scope="col">Element 4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  <th>Value for Rcal</th>
+
+                  {%for i in range(0, len)%}
+
+                  {%for j in range(0, len)%}
+  
+                  <li>{{result[i][j]}}</li>
+
+                  {%endfor%}
+
+
+
+                  <td name="rcal1" id="rcal1" >{{result[0][0]}}</td>
+                  <td name="rcal2" id="rcal2" >{{result[1][0]}}</td>
+                  <td name="rcal3" id="rcal3" >{{result[2][0]}}</td>
+                  <td name="rcal4" id="rcal4" >{{result[3][0]}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+      </div>
+    </div>
+    </div>
+    <div class="col-lg-6 col-sm-10 col-md-6">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+          Permeate water Characteristics
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo" data-bs-parent="#accordionpanelsStayOpenExample">
+        <div class="accordion-body"><div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Element 1</th>
+                  <th scope="col">Element 2</th>
+                  <th scope="col">Element 3</th>
+                  <th scope="col">Element 4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Cp(mg/l)</th>
+                  <td name="cp1" id="cp1">{{result[0][5]}}</td>
+                  <td name="cp2" id="cp2">{{result[1][5]}}</td>
+                  <td name="cp3" id="cp3">{{result[2][5]}}</td>
+                  <td name="cp4" id="cp4">{{result[3][5]}}</td>
+                </tr>
+                <tr>
+                  <th>Qp(m<sup>3</sup>/s0</th>
+                  <td name="qp1" id="qp1">{{result[0][6]}}<sup>{{result[0][8]}}</sup></td>
+                  <td name="qp2" id="qp2">{{result[1][6]}}<sup>{{result[0][8]}}</sup></td>
+                  <td name="qp3" id="qp3">{{result[2][6]}}<sup>{{result[0][8]}}</sup></td>
+                  <td name="qp4" id="qp4">{{result[3][6]}}<sup>{{result[0][8]}}</sup></td>
+                </tr>
+                <tr>
+                  <th>Vfb(m/s)</th>
+                  <td name="vfb1" id="vfb1">{{result[0][7]}}</td>
+                  <td name="vfb2" id="vfb2">{{result[1][7]}}</td>
+                  <td name="vfb3" id="vfb3">{{result[2][7]}}</td>
+                  <td name="vfb4" id="vfb4">{{result[3][7]}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="row ">
+    <div class="col-lg-6 col-sm-10 col-md-6">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+         Other Parameters
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree" data-bs-parent="#accordionpanelsStayOpenExample">
+        <div class="accordion-body"><div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Element 1</th>
+                  <th scope="col">Element 2</th>
+                  <th scope="col">Element 3</th>
+                  <th scope="col">Element 4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Avg feed brine velocity(Vfb)(m/s)</th>
+                  <td name="brine1" id="brine1">{{result[0][8]}}</td>
+                  <td name="brine2" id="brine2">{{result[1][8]}}</td>
+                  <td name="brine3" id="brine3">{{result[2][8]}}</td>
+                  <td name="brine4" id="brine4">{{result[3][8]}}</td>
+                </tr>
+                <tr>
+                  <th>Avg feed brine flow rate(Qb)(m<sup>3</sup>/s)</th>
+                  <td name="qb1" id="qb1">{{result[0][9]}}</td>
+                  <td name="qb2" id="qb2">{{result[1][9]}}</td>
+                  <td name="qb3" id="qb3">{{result[2][9]}}</td>
+                  <td name="qb4" id="qb4">{{result[3][9]}}</td>
+                </tr>
+                <tr>
+                  <th>Dynamic Viscosity(mu)(kg/ms)</th>
+                  <td name="mu1" id="mu1">{{result[0][10]}}</td>
+                  <td name="mu2" id="mu2">{{result[1][10]}}</td>
+                  <td name="mu3" id="mu3">{{result[2][10]}}</td>
+                  <td name="mu4" id="mu4">{{result[3][10]}}</td>
+                </tr>
+
+                <tr>
+                  <th>Reynolds Number(Re)</th>
+                  <td name="re1" id="re1">{{result[0][11]}}</td>
+                  <td name="re2" id="re2">{{result[1][11]}}</td>
+                  <td name="re3" id="re3">{{result[2][11]}}</td>
+                  <td name="re4" id="re4">{{result[3][11]}}</td>
+                </tr>
+                <tr>
+                  <th>Solute diffusivity(D)(m<sup>2</sup>/s)</th>
+                  <td name="d1" id="d1">{{result[0][12]}}</td>
+                  <td name="d2" id="d2">{{result[1][12]}}</td>
+                  <td name="d3" id="d3">{{result[2][12]}}</td>
+                  <td name="d4" id="d4">{{result[3][12]}}</td>
+                </tr>
+                <tr>
+                  <th>Schmidt Number(Sc)</th>
+                  <td name="sc1" id="sc1">{{result[0][13]}}</td>
+                  <td name="sc2" id="sc2">{{result[1][13]}}</td>
+                  <td name="sc3" id="sc3">{{result[2][13]}}</td>
+                  <td name="sc4" id="sc4">{{result[3][13]}}</td>
+                </tr>
+                <tr>
+                  <th>Mass Transfer coefficient(K)</th>
+                  <td name="k1" id="k1">{{result[0][14]}}</td>
+                  <td name="k2" id="k2">{{result[1][14]}}</td>
+                  <td name="k3" id="k3">{{result[2][14]}}</td>
+                  <td name="k4" id="k4">{{result[3][14]}}</td>
+                </tr>
+                <tr>
+                  <th>Permeate Water Flux(Jw)(m<sup>3</sup>/m<sup>2</sup>s)</th>
+                  <td name="jw1" id="jw1">{{result[0][15]}}</td>
+                  <td name="jw2" id="jw2">{{result[1][15]}}</td>
+                  <td name="jw3" id="jw3">{{result[2][15]}}</td>
+                  <td name="jw4" id="jw4">{{result[3][15]}}</td>
+                </tr>
+                <tr>
+                  <th>Concentration Polarization(Cp)</th>
+                  <td name="polar1" id="polar1">{{result[0][16]}}</td>
+                  <td name="polar2" id="polar2">{{result[1][16]}}</td>
+                  <td name="polar3" id="polar3">{{result[2][16]}}</td>
+                  <td name="polar4" id="polar4">{{result[3][16]}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    
+
+    
+      <div class="col-lg-6 col-sm-10 col-md-6">
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+              Feed Water Characteristics
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour" data-bs-parent="#accordionpanelsStayOpenExample">
+            <div class="accordion-body">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Element 1</th>
+                    <th scope="col">Element 2</th>
+                    <th scope="col">Element 3</th>
+                    <th scope="col">Element 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Qf(m<sup>3</sup>/s)</th>
+                    <td name="qf1" id="qf1">{{result[0][1]}}</td>
+                    <td name="qf2" id="qf2">{{result[1][1]}}</td>
+                    <td name="qf3" id="qf3">{{result[2][1]}}</td>
+                    <td name="qf4" id="qf4">{{result[3][1]}}</td>
+                  </tr>
+                  <tr>
+                    <th>Cf(mg/l)</th>
+                    <td name="cf1" id="cf1">{{result[0][2]}}</td>
+                    <td name="cf2" id="cf2">{{result[1][2]}}</td>
+                    <td name="cf3" id="cf3">{{result[2][2]}}</td>
+                    <td name="cf4" id="cf4">{{result[3][2]}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="row ">
+        <div class="col-lg-6 col-sm-10 col-md-6">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+             Concentrate water characteristics
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive" data-bs-parent="#accordionpanelsStayOpenExample">
+            <div class="accordion-body"> <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Element 1</th>
+                      <th scope="col">Element 2</th>
+                      <th scope="col">Element 3</th>
+                      <th scope="col">Element 4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Qc(m<sup>3</sup>/s)</th>
+                      <td name="qc1" id="qc1">{{result[0][3]}}</td>
+                      <td name="qc2" id="qc2">{{result[1][3]}}</td>
+                      <td name="qc3" id="qc3">{{result[2][3]}}</td>
+                      <td name="qc4" id="qc4">{{result[3][3]}}</td>
+                    </tr>
+                    <tr>
+                      <th>Cc(mg/l)</th>
+                      <td name="cc1" id="cc1">{{result[0][4]}}</td>
+                      <td name="cc2" id="cc2">{{result[1][4]}}</td>
+                      <td name="cc3" id="cc3">{{result[2][4]}}</td>
+                      <td name="cc4" id="cc4">{{result[3][4]}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-10">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+             Pressure Parameters
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix" data-bs-parent="#accordionpanelsStayOpenExample">
+            <div class="accordion-body">  <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Element 1</th>
+                      <th scope="col">Element 2</th>
+                      <th scope="col">Element 3</th>
+                      <th scope="col">Element 4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Feed water pressure(P)(kg/ms<sup>2</sup>)</th>
+                      <td name="p1" id="p1">{{result[0][17]}}</td>
+                      <td name="p2" id="p2">{{result[1][17]}}</td>
+                      <td name="p3" id="p3">{{result[2][17]}}</td>
+                      <td name="p4" id="p4">{{result[3][17]}}</td>
+                    </tr>
+                    <tr>
+                      <th>Pressure drop at feed side(deltaP)(kg/ms<sup>2</sup>)</th>
+                      <td name="deltap1" id="deltap1">{{result[0][18]}}</td>
+                      <td name="deltap2" id="deltap2">{{result[1][18]}}</td>
+                      <td name="deltap3" id="deltap3">{{result[2][18]}}</td>
+                      <td name="deltap4" id="deltap4">{{result[3][18]}}</td>
+                    </tr>
+                    <tr>
+                      <th>osmotic pressure on membrane surface(pi M)(kg/ms<sup>2</sup>)</th>
+                      <td name="pim1" id="pim1">{{result[0][19]}}</td>
+                      <td name="pim2" id="pim2">{{result[1][19]}}</td>
+                      <td name="pim3" id="pim3">{{result[2][19]}}</td>
+                      <td name="pim4" id="pim4">{{result[3][19]}}</td>
+                    </tr>
+                    <tr>
+                      <th>permeate osmotic pressure(pi P)(kg/ms<sup>2</sup>)</th>
+                      <td name="pip1" id="pip1">{{result[0][20]}}</td>
+                      <td name="pip2" id="pip2">{{result[1][20]}}</td>
+                      <td name="pip3" id="pip3">{{result[2][20]}}</td>
+                      <td name="pip4" id="pip4">{{result[3][20]}}</td>
+                    </tr>
+                    <tr>
+                      <th>osmotic pressure gradient(delta pi)(kg/ms<sup>2</sup>)</th>
+                      <td name="dpi1" id="dpi1">{{result[0][21]}}</td>
+                      <td name="dpi2" id="dpi2">{{result[1][21]}}</td>
+                      <td name="dpi3" id="dpi3">{{result[2][21]}}</td>
+                      <td name="dpi4" id="dpi4">{{result[3][21]}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> </div>
+          </div>
+          </div>
+        </div>
+
+
+  </div>
+  
+  </div>
+  </div>
+
+<!-- table ends -->
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </body>
+</html>
