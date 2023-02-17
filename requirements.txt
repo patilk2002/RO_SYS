@@ -25,7 +25,6 @@ PyAudio==0.2.13
 pycparser==2.21
 pycryptodome==3.16.0
 pyparsing==3.0.9
-pypiwin32==223
 Pyrebase4==4.6.0
 python-jwt==4.0.0
 pyttsx3==2.90
