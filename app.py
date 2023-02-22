@@ -285,7 +285,7 @@ def gfg():
 
         result.append([total])
 
-        print("\n", T, F)
+        print("********************************************\n\n", T, F, N, total)
         return render_template("overall.html", result=result)
         # return "<div style='text-align:center;height:100px;width:500px;padding:50px 100px;border:2px solid;border-radius:10px;margin:0 auto;margin-top:200px;'><h2>The Alkalinity is : "+str(120)+" mg/L of CaCO3 </h2></div>"
 
